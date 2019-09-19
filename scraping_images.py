@@ -8,7 +8,7 @@ import re
 from azure.cognitiveservices.search.imagesearch import ImageSearchAPI
 from msrest.authentication import CognitiveServicesCredentials
 
-subscription_key = "0c9c1cb7f74342dcbc921c5cee0843a6"
+subscription_key = "API KEY"
 search_term = "aloe vera houseplant"
 client = ImageSearchAPI(CognitiveServicesCredentials(subscription_key))
 
@@ -27,9 +27,9 @@ def pull_images(search_term, num_of_images):
 images = pull_images(search_term, 3000)
 
 ## Downloading images
-for i in range(0, len(links)):
+for i in range(0, len(images)):
     try:
-        imgobj = requests.get(link[i].content_url)
+        imgobj = requests.get(images[i].content_url)
         title = 'aloevera'+str(i+1)
         img = Image.open(BytesIO(imgobj.content))
         img.save('./scraped/aloe/'+title, img.format)
