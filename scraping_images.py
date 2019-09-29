@@ -8,8 +8,8 @@ import re
 from azure.cognitiveservices.search.imagesearch import ImageSearchAPI
 from msrest.authentication import CognitiveServicesCredentials
 
-subscription_key = "API KEY"
-search_term = "aloe vera houseplant"
+subscription_key = "454d19a75b0a485890432194e4fd28e8"
+search_term = "dumb cane houseplant"
 client = ImageSearchAPI(CognitiveServicesCredentials(subscription_key))
 
 
@@ -30,8 +30,8 @@ images = pull_images(search_term, 3000)
 for i in range(0, len(images)):
     try:
         imgobj = requests.get(images[i].content_url)
-        title = 'aloevera'+str(i+1)
+        title = 'cane'+str(i+1)
         img = Image.open(BytesIO(imgobj.content))
-        img.save('./scraped/aloe/'+title, img.format)
+        img.save('./Images/cane/'+title+'.jpg')
     except IOError:
         pass
