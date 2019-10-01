@@ -1,3 +1,7 @@
+### Almat Yeraly and Jude Battista
+### The model used was VGGNet A
+### The reference was https://www.pyimagesearch.com/2017/03/20/imagenet-vggnet-resnet-inception-xception-keras/
+
 from keras import layers
 from keras import models
 from keras import optimizers
