@@ -1,3 +1,6 @@
+### Almat Yeraly and Jude Battista
+### This was directly copied and modified from https://towardsdatascience.com/image-detection-from-scratch-in-keras-f314872006c9
+
 from keras import layers
 from keras import models
 from keras import optimizers
