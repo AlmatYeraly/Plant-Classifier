@@ -1,3 +1,6 @@
+### Almat Yeraly and Jude Battista
+### This was directly copied and modified from https://towardsdatascience.com/image-detection-from-scratch-in-keras-f314872006c9
+
 import cv2
 import numpy as np
 import pandas as pd 
@@ -55,9 +58,6 @@ def read_and_process_image(list_of_images):
 
 X, y = read_and_process_image(train_imgs)
 
-X[0]
-y[0]
-
 import seaborn as sns
 del train_imgs
 gc.collect()
@@ -68,17 +68,8 @@ y = np.array(y)
 sns.countplot(y)
 plt.title('Labels for aloevera, peacelily, spiderplant, dumbcane')
 
-print("shape of train images is: ", X.shape)
-print("shape of labels is: ", y.shape)
-
-
 from sklearn.model_selection import train_test_split
 X_train, X_val, y_train, y_val = train_test_split(X, y, test_size = 0.20, random_state=2)
-
-print("shape of train images is: ", X_train.shape)
-print("shape of validation images is: ", X_val.shape)
-print("shape of labels (train) is: ", y_train.shape)
-print("shape of labels (val) is: ", y_val.shape)
 
 del X
 del y
